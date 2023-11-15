@@ -4,22 +4,18 @@ import minimist from "minimist";
 import { Octokit } from "octokit";
 import { retry } from "@octokit/plugin-retry";
 import { throttling } from "@octokit/plugin-throttling";
-import {
-  getContributions,
-  generateAndPushCommits,
-} from "./github/githubApi.js";
-import { logContributionsToday } from "./utils/logger.js";
+import { getContributions, generateAndPushCommits } from "./github/githubApi";
+import { logContributionsToday } from "./utils/logger";
+import "dotenv/config";
 
-async function main() {
+export async function main() {
   try {
-    const { env } = process;
     const argv = minimist(process.argv.slice(2), {
       string: ["token", "condition"],
     });
-    console.log(argv);
 
-    const username = getUsername(argv, env);
-    const token = getToken(argv, env);
+    const username = getUsername(argv);
+    const token = getToken(argv);
     const condition = getCondition(argv);
 
     // Initialize Octokit
@@ -61,15 +57,12 @@ async function main() {
   }
 }
 
-function getUsername(
-  argv: minimist.ParsedArgs,
-  env: NodeJS.ProcessEnv
-): string {
-  return argv._[0] || env.GITHUB_ACTOR || "";
+function getUsername(argv: minimist.ParsedArgs): string {
+  return argv._[0] || process.env.GITHUB_ACTOR || "";
 }
 
-function getToken(argv: minimist.ParsedArgs, env: NodeJS.ProcessEnv): string {
-  return argv.token || env.GITHUB_TOKEN || "";
+function getToken(argv: minimist.ParsedArgs): string {
+  return argv.token || process.env.DEVFUL_GITHUB_TOKEN || "";
 }
 
 function getCondition(argv: minimist.ParsedArgs): number {
