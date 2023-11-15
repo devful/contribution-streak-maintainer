@@ -28,7 +28,7 @@ permissions:
   contents: write
 
 jobs:
-  my-badges:
+  contribution-streak-maintainer:
     runs-on: ubuntu-latest
     steps:
       - name: Make a contribution
