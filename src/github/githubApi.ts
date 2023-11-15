@@ -1,9 +1,9 @@
 import { Octokit } from "octokit";
 import { execSync } from "child_process";
-import { getFormattedDate } from "../utils/dateUtils.js";
-import { createFileIfNotExists } from "../utils/fileUtils.js";
-import { ContributionResponse } from "./githubTypes.js";
-import { checkGitInstalled } from "../git/gitCommands.js";
+import { getFormattedDate } from "../utils/dateUtils";
+import { createFileIfNotExists } from "../utils/fileUtils";
+import type { ContributionResponse } from "./githubTypes";
+import { checkGitInstalled } from "../git/gitCommands";
 
 export async function getContributions(
   username: string,
