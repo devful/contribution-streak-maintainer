@@ -34,7 +34,7 @@ jobs:
       - name: Make a contribution
         run: npx contribution-streak-maintainer ${{github.repository_owner}}
         env:
-          YOUR_GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
+          DEVFUL_GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
 ```
 
 - Manually start **contribution-streak-maintainer** workflow, or wait for it to run automatically.
