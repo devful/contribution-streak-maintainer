@@ -1,4 +1,4 @@
-import { isGitInstalled } from "../src/git/gitCommands";
+import { isGitInstalled } from "../../src/git/gitCommands";
 import { execSync } from "child_process";
 
 jest.mock("child_process");
