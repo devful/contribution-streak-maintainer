@@ -1,7 +1,5 @@
 # Contribution Streak Maintainer
 
-with Contribution Streak Maintainer.
-
 **Contribution Streak Maintainer** is a GitHub Action that automatically maintain your GitHub contribution streak.
 This GitHub Actions workflow generates and pushes commits to your repository, ensuring your activity stays active even on days when you're not able to make manual contributions.
 
