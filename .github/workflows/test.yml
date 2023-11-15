@@ -30,3 +30,5 @@ jobs:
 
       - name: Run unit tests
         run: npm run test
+        env:
+          DEVFUL_GITHUB_TOKEN: ${{ secrets.DEVFUL_GITHUB_TOKEN }}
