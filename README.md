@@ -42,7 +42,7 @@ jobs:
 Alternatively, you can perform these steps manually:
 
 - Go to your newly created local repo.
-- Run `npx contribution-streak-maintainer <username> --token=<token> --condition=<condition>.
+- Run `npx contribution-streak-maintainer <username> --token=<token> --condition=<condition>`
   - Example: `npx contribution-streak-maintainer eliasafara --token=gph_nJkKQKJKFb7YxqkLtFf3wvXyU6X --condition=6`
 - Verify changes in `AUTOMATED_CONTRIBUTIONS.md`.
 
