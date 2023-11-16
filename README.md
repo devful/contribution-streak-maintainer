@@ -48,7 +48,7 @@ Alternatively, you can perform these steps manually:
 
 | Param        | ENV alias             | Type   | Description                                                       | Default |
 | ------------ | --------------------- | ------ | ----------------------------------------------------------------- | ------- |
-| `repository` | `GITHUB_REPO`         | String | The owner and repository name. For example, `octocat/Hello-World` |         |
+| `repository` | `DEVFUL_GITHUB_REPO`  | String | The owner and repository name. For example, `octocat/Hello-World` |         |
 | `token`      | `DEVFUL_GITHUB_TOKEN` | String | Github Auth token                                                 |         |
 | `condition`  |                       | String | Condition for contribution to be made                             | 0       |
 

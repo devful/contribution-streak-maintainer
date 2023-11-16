@@ -68,7 +68,7 @@ export async function main() {
 function getUsername(
   argv: minimist.ParsedArgs
 ): [string | undefined, string | undefined] {
-  const repoString = argv._[0] || process.env.GITHUB_REPO || "";
+  const repoString = argv._[0] || process.env.DEVFUL_GITHUB_REPO || "";
   const [username, repo] = repoString.split("/", 2);
   return [username || undefined, repo || undefined];
 }
