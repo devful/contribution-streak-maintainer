@@ -1,5 +1,6 @@
 import { chdir } from "node:process";
 import { execSync, spawnSync } from "node:child_process";
+import fse from "fs-extra";
 
 import { getFormattedDate } from "./dateUtils";
 import { createFileIfNotExists } from "./fileUtils";
@@ -57,6 +58,12 @@ export function gitClone(
   directory: string
 ): void {
   try {
+    // Delete the existing directory if it exists
+    if (fse.existsSync(directory)) {
+      fse.removeSync(directory);
+      console.log(`Deleted existing directory: ${directory}`);
+    }
+
     console.log(`Cloning repository: ${owner}/${repo}`);
     // Clone the repository with depth 1 to minimize download size
     exec("git", [
