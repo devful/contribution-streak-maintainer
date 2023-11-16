@@ -4,7 +4,8 @@ import minimist from "minimist";
 import { Octokit } from "octokit";
 import { retry } from "@octokit/plugin-retry";
 import { throttling } from "@octokit/plugin-throttling";
-import { getContributions, generateAndPushCommits } from "./github/githubApi";
+import * as gitUtils from "./utils/gitUtils";
+import { getContributions } from "./github/githubApi";
 import { logContributionsToday } from "./utils/logger";
 import "dotenv/config";
 
@@ -14,7 +15,7 @@ export async function main() {
       string: ["token", "condition"],
     });
 
-    const username = getUsername(argv);
+    const [username, repository] = getUsername(argv);
     const token = getToken(argv);
     const condition = getCondition(argv);
 
@@ -43,13 +44,20 @@ export async function main() {
       retry: { doNotRetry: ["429"] },
     });
 
-    const contributions = await getContributions(username, octokit);
+    const cloneDirectoryName = `${repository}-clone`;
 
-    logContributionsToday(contributions);
+    if (username && repository) {
+      gitUtils.checkGitInstalled();
+      gitUtils.gitClone(username, repository, token, cloneDirectoryName);
 
-    // Check if contributions meet the specified condition
-    if (contributions <= condition) {
-      await generateAndPushCommits();
+      const contributions = await getContributions(username, octokit);
+
+      logContributionsToday(contributions);
+
+      // Check if contributions meet the specified condition
+      if (contributions <= condition) {
+        await gitUtils.generateAndPushCommits(cloneDirectoryName);
+      }
     }
   } catch (e) {
     console.error(e);
@@ -57,8 +65,12 @@ export async function main() {
   }
 }
 
-function getUsername(argv: minimist.ParsedArgs): string {
-  return argv._[0] || process.env.GITHUB_ACTOR || "";
+function getUsername(
+  argv: minimist.ParsedArgs
+): [string | undefined, string | undefined] {
+  const repoString = argv._[0] || process.env.DEVFUL_GITHUB_REPO || "";
+  const [username, repo] = repoString.split("/", 2);
+  return [username || undefined, repo || undefined];
 }
 
 function getToken(argv: minimist.ParsedArgs): string {
