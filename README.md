@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Make a contribution
-        run: npx contribution-streak-maintainer ${{github.repository}}
+        run: npx contribution-streak-maintainer ${{github.repository}} --email=primary-github-email@email.com
         env:
           DEVFUL_GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
 ```
