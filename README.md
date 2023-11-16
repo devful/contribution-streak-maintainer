@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Make a contribution
-        run: npx contribution-streak-maintainer ${{github.repository_owner}}
+        run: npx contribution-streak-maintainer ${{github.repository}}
         env:
           DEVFUL_GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
 ```
@@ -40,17 +40,17 @@ jobs:
 Alternatively, you can perform these steps manually:
 
 - Go to your newly created local repo.
-- Run `npx contribution-streak-maintainer <username> --token=<token> --condition=<condition>`
+- Run `npx contribution-streak-maintainer <username>/<repository_name> --token=<token> --condition=<condition>`
   - Example: `npx contribution-streak-maintainer eliasafara --token=gph_nJkKQKJKFb7YxqkLtFf3wvXyU6X --condition=6`
 - Verify changes in `AUTOMATED_CONTRIBUTIONS.md`.
 
 ## Configuration
 
-| Param       | ENV alias             | Description                           | Default | Type   |
-| ----------- | --------------------- | ------------------------------------- | ------- | ------ |
-| `username`  | `GITHUB_ACTOR`        | Github Username                       |         | String |
-| `token`     | `DEVFUL_GITHUB_TOKEN` | Github Auth token                     |         | String |
-| `condition` |                       | Condition for contribution to be made | 0       | String |
+| Param        | ENV alias             | Type   | Description                                                       | Default |
+| ------------ | --------------------- | ------ | ----------------------------------------------------------------- | ------- |
+| `repository` | `GITHUB_REPO`         | String | The owner and repository name. For example, `octocat/Hello-World` |         |
+| `token`      | `DEVFUL_GITHUB_TOKEN` | String | Github Auth token                                                 |         |
+| `condition`  |                       | String | Condition for contribution to be made                             | 0       |
 
 By default, this action runs daily, checks if the user has made any contribution, and generates a random number of commits between 1-3. If the user sets the condition to, for example, 5, the action will only make commits if the user has made 0-5 commits that day.
 
