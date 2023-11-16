@@ -53,6 +53,7 @@ export function checkGitInstalled(): void {
  */
 export function gitClone(
   owner: string,
+  email: string,
   repo: string,
   token: string,
   directory: string
@@ -76,12 +77,8 @@ export function gitClone(
     chdir(directory);
 
     // Configure Git user information for the cloned repository
-    exec("git", ["config", "user.name", "Contribution Streak Maintainer"]);
-    exec("git", [
-      "config",
-      "user.email",
-      "contribution-streak-maintainer@users.noreply.github.com",
-    ]);
+    exec("git", ["config", "user.name", `${owner}`]);
+    exec("git", ["config", "user.email", `${email}`]);
   } finally {
     chdir("..");
   }

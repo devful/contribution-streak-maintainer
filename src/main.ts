@@ -12,10 +12,11 @@ import "dotenv/config";
 export async function main() {
   try {
     const argv = minimist(process.argv.slice(2), {
-      string: ["token", "condition"],
+      string: ["email", "token", "condition"],
     });
 
     const [username, repository] = getUsername(argv);
+    const email = argv.email;
     const token = getToken(argv);
     const condition = getCondition(argv);
 
@@ -48,7 +49,14 @@ export async function main() {
 
     if (username && repository) {
       gitUtils.checkGitInstalled();
-      gitUtils.gitClone(username, repository, token, cloneDirectoryName);
+
+      if (!email) {
+        throw new Error(
+          "Specify your primary email address so that GitHub can associate commits with your account and the commits can be counted towards your GitHub contribution graph. You can specify your email address using the --email=<email> option"
+        );
+      }
+
+      gitUtils.gitClone(username, email, repository, token, cloneDirectoryName);
 
       const contributions = await getContributions(username, octokit);
 

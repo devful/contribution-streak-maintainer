@@ -40,17 +40,18 @@ jobs:
 Alternatively, you can perform these steps manually:
 
 - Go to your newly created local repo.
-- Run `npx contribution-streak-maintainer <username>/<repository_name> --token=<token> --condition=<condition>`
-  - Example: `npx contribution-streak-maintainer eliasafara --token=gph_nJkKQKJKFb7YxqkLtFf3wvXyU6X --condition=6`
+- Run `npx contribution-streak-maintainer <username>/<repository_name> --email=<email> --token=<token> --condition=<condition>`
+  - Example: `npx contribution-streak-maintainer my-username --email=my-primary-github-email@email.com --token=gph_nJkKQKJKFb7YxqkLtFf3wvXyU6X --condition=6`
 - Verify changes in `AUTOMATED_CONTRIBUTIONS.md`.
 
 ## Configuration
 
-| Param        | ENV alias             | Type   | Description                                                       | Default |
-| ------------ | --------------------- | ------ | ----------------------------------------------------------------- | ------- |
-| `repository` | `DEVFUL_GITHUB_REPO`  | String | The owner and repository name. For example, `octocat/Hello-World` |         |
-| `token`      | `DEVFUL_GITHUB_TOKEN` | String | Github Auth token                                                 |         |
-| `condition`  |                       | String | Condition for contribution to be made                             | 0       |
+| Param        | ENV alias             | Type   | Description                                                       | Default | Required |
+| ------------ | --------------------- | ------ | ----------------------------------------------------------------- | ------- | -------- |
+| `repository` | `DEVFUL_GITHUB_REPO`  | String | The owner and repository name. For example, `octocat/Hello-World` |         | Yes      |
+| `email`      |                       | String | Primary email address associated with your GitHub account         |         | Yes      |
+| `token`      | `DEVFUL_GITHUB_TOKEN` | String | Github Auth token                                                 |         | Yes      |
+| `condition`  |                       | String | Condition for contribution to be made                             | 0       | No       |
 
 By default, this action runs daily, checks if the user has made any contribution, and generates a random number of commits between 1-3. If the user sets the condition to, for example, 5, the action will only make commits if the user has made 0-5 commits that day.
 
