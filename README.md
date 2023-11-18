@@ -2,8 +2,6 @@
   <img src=".github/csm-logo-560-transparent.png" alt="Contribution Streak Maintainer Logo" width="150" align="right" />
 </a>
 
-https://codecov.io/github/devful/contribution-streak-maintainer/settings/badge
-
 # 📅 Contribution Streak Maintainer
 
 [![npm](https://img.shields.io/npm/v/contribution-streak-maintainer)](https://www.npmjs.com/package/contribution-streak-maintainer)
