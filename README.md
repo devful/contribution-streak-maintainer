@@ -1,7 +1,31 @@
-# Contribution Streak Maintainer
+<a href="https://www.npmjs.com/package/contribution-streak-maintainer">
+  <img src=".github/csm-logo-560-transparent.png" alt="Contribution Streak Maintainer Logo" width="150" align="right" />
+</a>
 
-**Contribution Streak Maintainer** is a GitHub Action that automatically maintain your GitHub contribution streak.
-This GitHub Actions workflow generates and pushes commits to your repository, ensuring your activity stays active even on days when you're not able to make manual contributions.
+https://codecov.io/github/devful/contribution-streak-maintainer/settings/badge
+
+# 📅 Contribution Streak Maintainer
+
+[![npm](https://img.shields.io/npm/v/contribution-streak-maintainer)](https://www.npmjs.com/package/contribution-streak-maintainer)
+[![npm](https://img.shields.io/npm/dm/contribution-streak-maintainer)](https://www.npmjs.com/package/contribution-streak-maintainer)
+[![GitHub License](https://img.shields.io/github/license/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/blob/main/LICENSE)
+[![GitHub Repo stars](https://img.shields.io/github/stars/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/stargazers)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/devful/contribution-streak-maintainer/test.yml)](https://github.com/devful/contribution-streak-maintainer/actions)
+[![GitHub issues](https://img.shields.io/github/issues/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/pulls)
+[![GitHub contributors](https://img.shields.io/github/contributors/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/commits/main)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer)
+
+<!-- ![Codecov](https://img.shields.io/codecov/c/github/devful/contribution-streak-maintainer) -->
+
+- _Have you ever wanted to keep your contribution streak going but never been able to?_
+- _Do you find it challenging to make manual contributions every single day?_
+- _Worry no more!_
+
+**Contribution Streak Maintainer** is a tool, available as an [npm package](https://www.npmjs.com/package/contribution-streak-maintainer), designed to be used inside a GitHub Actions workflow. This npm package is utilized within your workflow, automatically maintaining your GitHub contribution streak. The GitHub Actions workflow, configured through YAML files, generates and pushes commits to your repository, ensuring your activity stays active even on days when you're not able to make manual contributions.
+
+Now you can focus on your work, knowing that your GitHub contributions are being taken care of automatically. Keep your streak alive effortlessly by integrating the Contribution Streak Maintainer npm package into your GitHub Actions workflow!
 
 ## Installation
 
