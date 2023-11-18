@@ -1,8 +1,8 @@
-<a href="https://www.npmjs.com/package/contribution-streak-maintainer">
-  <img src=".github/csm-logo-560-transparent.png" alt="Contribution Streak Maintainer Logo" width="150" align="right" />
-</a>
-
 # 📅 Contribution Streak Maintainer
+
+<a href="https://www.npmjs.com/package/contribution-streak-maintainer">
+  <img src=".github/csm-logo-560-transparent.png" alt="Contribution Streak Maintainer Logo" width="200" align="right" />
+</a>
 
 [![npm](https://img.shields.io/npm/v/contribution-streak-maintainer)](https://www.npmjs.com/package/contribution-streak-maintainer)
 [![npm](https://img.shields.io/npm/dm/contribution-streak-maintainer)](https://www.npmjs.com/package/contribution-streak-maintainer)
@@ -14,8 +14,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/graphs/contributors)
 [![GitHub last commit](https://img.shields.io/github/last-commit/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer/commits/main)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/devful/contribution-streak-maintainer)](https://github.com/devful/contribution-streak-maintainer)
-
-<!-- ![Codecov](https://img.shields.io/codecov/c/github/devful/contribution-streak-maintainer) -->
+![Codecov](https://img.shields.io/codecov/c/github/devful/contribution-streak-maintainer)
 
 - _Have you ever wanted to keep your contribution streak going but never been able to?_
 - _Do you find it challenging to make manual contributions every single day?_
