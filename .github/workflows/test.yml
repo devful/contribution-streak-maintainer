@@ -32,3 +32,8 @@ jobs:
         run: npm run test
         env:
           DEVFUL_GITHUB_TOKEN: ${{ secrets.DEVFUL_GITHUB_TOKEN }}
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
