@@ -14,7 +14,22 @@
     "ci-test": "jest",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "GitHub Actions",
+    "GitHub Workflow",
+    "GitHub Contributions",
+    "Contribution Streak",
+    "Automation",
+    "Node.js",
+    "NPM Package",
+    "Continuous Integration",
+    "Developer Tools",
+    "Daily Contributions",
+    "Daily Commits",
+    "Open Source",
+    "TypeScript",
+    "Jest"
+  ],
   "files": [
     "dist"
   ],
